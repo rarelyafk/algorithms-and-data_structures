@@ -1,0 +1,9 @@
+
+Constant          O(1)
+Logarithmic       O(log(n))
+Linear            O(n)
+Linearithmic      O(n(log(n)))
+Quadratric        O(n²)
+Cubic             O(n³)
+Exponential       O(bⁿ), b > 1
+Factorial         O(n!)
