@@ -1,0 +1,8 @@
+SORTING ALGO   | time complexity | 
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|best |avg  |worst|space|inplace|online|stable|
+selection sort |n²   |n²   |n²   |1    |✓      |X     |X     |
+bubble sort    |n    |n²   |n²   |1    |✓      |X     |✓     |
+insertion sort |n    |n²   |n²   |1    |✓      |✓     |✓     |
+quick sort     |nlogn|nlogn|n²   |1    |✓      |X     |X     |
+heap sort      |nlogn|nlogn|nlogn|1    |✓      |X     |X     |
+merge sort     |nlogn|nlogn|nlogn|n    |X      |X     |✓     |
