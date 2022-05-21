@@ -1,0 +1,83 @@
+Abstract Data Types
+- container
+- list
+- tuple
+- associative array (map/dictionary)
+- multimap
+- set
+- multiset (bag)
+- stack
+- queue (ex: priority queue)
+- double-ended queue
+- graph (ex: tree, heap)
+
+Structure         Order   Unique
+list              yes     no
+associative array no      keys/indexes only
+set               no      yes
+stack             yes     no
+multimap          no      no
+multiset (bag)    no      no
+queue             yes     no
+
+Linear Data Structures
+Arrays
+- array
+- bitmap
+- image
+- matrix
+- sorted array
+- variable-length array
+- etc.
+Lists
+- array list
+- singly-linked list
+- doubly-linked list
+- circularly-linked list
+- zipper
+- etc.
+
+Trees
+Binary Trees
+- Binary Search Tree (BST)
+- binary tree
+B-Trees
+- B-tree
+- B*-tree
+- B+ tree
+- queap
+Heaps
+- heap
+- binary heap
+- binomial heap
+- fibonacci heap
+- pairing heap
+Trees
+- tree
+- radix tree
+- B-Tree
+- Merkle tree (hash tree)
+Multi-Way Trees
+- ternary tree
+Space Partitioning Trees
+- etc.
+Application-Specific Trees
+- decision tree
+- minimax tree
+- parse tree
+
+Hash-Based Structures
+- hash list
+- hash table
+- hash tree
+- hash trie
+- etc.
+
+Graphs
+- graph
+- adjacency list
+- adjacency matrix
+- decision tree
+  - binary decision diagram
+- directed graph
+
