@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/* Takes a min and max natural number to generate
+/* Takes a min and max *natural* number to generate
  * an (inclusive) range from.
  * Returns an array of that range.
  *
@@ -19,7 +19,8 @@ const genRange = (min, max) => {
 };
 
 /* Takes a range (array) of ordered natural numbers (inclusive).
- * Naively loops through the range, adding to a sum var.
+ * Naively loops through the range, adding each num,
+ * 1 at a time, to a sum var.
  * Returns the sum.
  * 
  * @param {number[]} range
