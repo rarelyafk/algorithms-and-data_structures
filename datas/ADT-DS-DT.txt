@@ -1,0 +1,20 @@
+Abstract Data Type
+Defines contractual agreement for behavior and state management
+Abstract Data Types exists only conceptually.
+They have no concrete existence in the context of a language.
+This is why Wikipedia refers to it specifically as a mathematical model.
+
+Data Structure
+Class level implementation of the contract defined by an abstract data type.
+Data Structures exists in the form of the code that comprises your class definition.
+
+Data Type
+Concrete instance of a class
+Data Types exists in the form of objects created from classes you defined.
+
+Examples
+A Priority Queue is an abstract data type which can be implemented with a Binary Heap data structure.
+A List is an abstract data type that can be implemented with an array or linked list data struture
+
+TLDR
+Abstract Data Type > Data Structure > Data Type
