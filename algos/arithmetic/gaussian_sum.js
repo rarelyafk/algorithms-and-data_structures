@@ -11,10 +11,8 @@
 const genRange = (min, max) => {
   const range = [];
   let cur = min;
-  while (cur <= max) {
-    range.push(cur);
-    cur++;
-  }
+  while (cur <= max)
+    range.push(cur) && cur++;
   return range;
 };
 
@@ -40,30 +38,43 @@ const naiveSum = range => {
  *
  */
 const gaussSum = range => {
-  const min = Math.min(...range);
   const max = Math.max(...range);
-  return (
-    ((((max - (min + 1)) * (max + min)) / 2) + min + max)
-  );
+  const min = Math.min(...range);
+    return (
+      (((max - (min + 1)) *
+      (max + min)) /
+      2) +
+      min +
+      max
+    );
 };
 
 // TESTS //////////////////////////////////////////////////////////////////////
 console.log('-=[ TESTS ]=-');
+
+const testNaiveSum = (nums, min, max) => {
+  console.time('naiveSum');
+  const naiveSumTotal = naiveSum(nums);
+  console.timeEnd('naiveSum');
+  console.log(`naiveSum total: ${naiveSumTotal}`);
+};
+
+const testGaussSum = (nums, min, max) => {
+  console.time('gaussSum');
+  const gaussSumTotal = gaussSum(nums);
+  console.timeEnd('gaussSum');
+  console.log(`gaussSum total: ${gaussSumTotal}`);
+};
 
 const tests = nums => {
   const min = Math.min(...nums);
   const max = Math.max(...nums);
   console.log();
   console.log(`calculating sum of natural numbers ranging from ${min} to ${max}`);
-  console.time('naiveSum');
-  console.log(`naiveSum: ${naiveSum(nums)}`);
-  console.timeEnd('naiveSum');
-  console.time('gaussSum');
-  console.log(`gaussSum: ${gaussSum(nums)}`);
-  console.timeEnd('gaussSum');
+  testNaiveSum(nums, min, max);
+  testGaussSum(nums, min, max);
 };
 
-tests(genRange(2, 4));
 tests(genRange(1, 10));
-tests(genRange(1, 500));
-tests(genRange(1, 99999));
+tests(genRange(1, 1000));
+tests(genRange(1, 100000));
