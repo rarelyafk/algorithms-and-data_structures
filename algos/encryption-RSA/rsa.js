@@ -9,6 +9,9 @@ based on a very hard integer factorization problem -
 it is very hard to work out what the 2 prime factors of
   a large semiprime number (a number that is the product of exactly 2 primes)
 
+Original Paper:
+https://people.csail.mit.edu/rivest/Rsapaper.pdf
+
 ///////////////////////////////////////////////////////////////////////////////
 Historical Example:
 
@@ -45,6 +48,7 @@ choose e & d such that
   choosing e
     ((e * d) mod T) = 1
     ((e * d) mod 6) = 1
+    ((e * d) % 6) = 1
     e must be less than 6
     e must be coprime with 6 & 1
     e = 5
@@ -52,6 +56,7 @@ choose e & d such that
     multiples of 5
     ((e * d) mod T) = 1
     ((5 * d) mod 6) = 1
+    ((5 * d) % 6) = 1
     could use 5, 11, or 17
     d = 11
   publish public key:
@@ -95,7 +100,9 @@ Modular Arithmetic:
 
 Clock Conversions
 analogy of 24-hour to 12-hour clock conversions
-15:00 = 03:00PM (15 - 12 = 3)
+08:00 = 8:00AM ( 8 % 12 = 8)
+15:00 = 3:00PM (15 % 12 = 3)
+21:00 = 9:00PM (21 % 12 = 9)
 
 Caesar Cipher
 Encryption:
@@ -104,14 +111,14 @@ Encryption:
     7 (as an example)
   c =
     character (to encrypt)
-    b (as an example)
+    'b' (as an example)
     2 (2nd letter in latin alphabet)
   Ci =
     (c + k) mod 26 = 
     (2 + 7) mod 26 =
     9 mod 26 =
     9
-    i (9th letter in latin alphabet)
+    'i' (9th letter in latin alphabet)
 
 Decryption:
   k =
@@ -119,14 +126,14 @@ Decryption:
     7 (as an example)
   c =
     character (to decrypt)
-    i (as an example)
+    'i' (as an example)
     9
   Mi =
     (c - k) mod 26 =
     (9 - 7) mod 26 =
     2 mod 26 =
     2
-    b (decrypted character)
+    'b' (decrypted character)
 
 ///////////////////////////////////////////////////////////////////////////////
 Euler's Totient:
@@ -157,6 +164,25 @@ nothing beyond RSA-260 has been broken/factorized yet...
 ///////////////////////////////////////////////////////////////////////////////
 */
 
+// ASCII
+// character to ASCII
+const c2i = c => c.charCodeAt(0);
+// ASCII to character
+const i2c = i => String.fromCharCode(i);
+
+/* Takes an array of integers representing ASCII chars.
+ * Returns a string of those integers ASCII conversions.
+ * // UInt8Array (0-255)
+ *
+ * @param {number[]} numArr
+ * @returns {string}
+ */
+const numArr2Str = numArr => (
+  numArr.reduce((str, n) => str + i2c(n), '')
+);
+
+
+///////////////////////////////////////////////////////////////////////////////
 // 1. Pick 2 prime numbers (>260 digits) (p, q)
 
 
@@ -179,6 +205,7 @@ getEulersTotient = (p, q) => ((p - 1) * (q - 1));
 //    a. ((d * e) mod Phi(N)) = 1
 
 
+///////////////////////////////////////////////////////////////////////////////
 // 2 distinct prime numbers chosen
 // security considerations: keep them large and far apart
 const P = 191n;
