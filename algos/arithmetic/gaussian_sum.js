@@ -38,8 +38,11 @@ const naiveSum = range => {
  *
  */
 const gaussSum = range => {
-  const max = Math.max(...range);
-  const min = Math.min(...range);
+  // const max = Math.max(...range);
+  // const min = Math.min(...range);
+  // assume range to be ordered...
+  const max = range[(range.length - 1)];
+  const min = range[0];
     return (
       (((max - (min + 1)) *
       (max + min)) /
