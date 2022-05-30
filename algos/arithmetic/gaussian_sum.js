@@ -55,14 +55,14 @@ const gaussSum = range => {
 // TESTS //////////////////////////////////////////////////////////////////////
 console.log('-=[ TESTS ]=-');
 
-const testNaiveSum = (nums, min, max) => {
+const testNaiveSum = nums => {
   console.time('naiveSum');
   const naiveSumTotal = naiveSum(nums);
   console.timeEnd('naiveSum');
   console.log(`naiveSum total: ${naiveSumTotal}`);
 };
 
-const testGaussSum = (nums, min, max) => {
+const testGaussSum = nums => {
   console.time('gaussSum');
   const gaussSumTotal = gaussSum(nums);
   console.timeEnd('gaussSum');
@@ -74,8 +74,8 @@ const tests = nums => {
   const max = Math.max(...nums);
   console.log();
   console.log(`calculating sum of natural numbers ranging from ${min} to ${max}`);
-  testNaiveSum(nums, min, max);
-  testGaussSum(nums, min, max);
+  testNaiveSum(nums);
+  testGaussSum(nums);
 };
 
 tests(genRange(1, 10));
